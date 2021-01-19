@@ -1,4 +1,4 @@
-# Gradle for Android and Java Final Project
+ # Gradle for Android and Java Final Project
 
 In this project, you will create an app with multiple flavors that uses
 multiple libraries and Google Cloud Endpoints. The finished app will consist
@@ -36,7 +36,7 @@ contains an activity with a banner ad and a button that purports to tell a
 joke, but actually just complains. The banner ad was set up following the
 instructions here:
 
-https://developers.google.com/mobile-ads-sdk/docs/admob/android/quick-start
+
 
 You may need to download the Google Repository from the Extras section of the
 Android SDK Manager.
