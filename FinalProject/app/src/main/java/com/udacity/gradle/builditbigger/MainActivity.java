@@ -17,12 +17,14 @@ import com.android.example.androidactivitylibrary.JokeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    public String retrievedJoke;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("WWD", "calling async task");
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+        //Log.d("WWD", "calling async task");
+        //new EndpointsAsyncTask().execute(new Pair<Context, String>(this, retrievedJoke));
     }
 
 
@@ -49,15 +51,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        Joker myJoker = new Joker();
-        String myJoke = myJoker.getJoke();
-        Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra("jokeString", myJoke);
-        startActivity(intent);
+        //Joker myJoker = new Joker();
+        //String myJoke = myJoker.getJoke();
+        //Intent intent = new Intent(this, JokeActivity.class);
+        //intent.putExtra("jokeString", myJoke);
+        //startActivity(intent);
 
         //
         // Toast.makeText(this,myJoke, Toast.LENGTH_SHORT).show();
+        Log.d("WWD", "calling async task");
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Warren"));
     }
+
+
 
 }
 
