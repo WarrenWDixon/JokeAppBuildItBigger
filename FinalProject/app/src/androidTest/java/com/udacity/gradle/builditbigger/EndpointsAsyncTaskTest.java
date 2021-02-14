@@ -9,6 +9,8 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
+import android.util.Pair;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -22,6 +24,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 
 /**
@@ -31,11 +34,20 @@ import static org.junit.Assert.assertEquals;
  */
  @RunWith(AndroidJUnit4.class)
 public class EndpointsAsyncTaskTest {
+     Context testContext;
     @Test
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
+        testContext = appContext;
         assertEquals("com.udacity.gradle.builditbigger", appContext.getPackageName());
+    }
+    
+    @Test
+    public void doInBackground() {
+        Log.d("WWD", "in doInBackground test");
+        EndpointsAsyncTask myTask = new EndpointsAsyncTask();
+        String response = myTask.doInBackground(new Pair<Context, String>(testContext, "Warren"));
+        assertNotEquals(0, response.length());
     }
 }

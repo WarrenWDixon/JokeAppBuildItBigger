@@ -17,7 +17,7 @@ import com.udacity.gradle.jokes.Joker;
 import com.android.example.androidactivitylibrary.JokeActivity;
 import java.io.IOException;
 
-class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
 
