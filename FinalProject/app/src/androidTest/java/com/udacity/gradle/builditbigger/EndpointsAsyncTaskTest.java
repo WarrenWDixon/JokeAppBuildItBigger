@@ -42,7 +42,7 @@ public class EndpointsAsyncTaskTest {
         testContext = appContext;
         assertEquals("com.udacity.gradle.builditbigger", appContext.getPackageName());
     }
-    
+
     @Test
     public void doInBackground() {
         Log.d("WWD", "in doInBackground test");
